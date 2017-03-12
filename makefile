@@ -14,7 +14,7 @@ local-phone-priv-apps := Shell FusedLocation ProxyHandler ExternalStorageProvide
 	BackupRestoreConfirmation
 
 local-density := XHDPI
-local-target-bit := 64
+local-target-bit := 32
 
 include $(PORT_BUILD)/porting.mk
 
