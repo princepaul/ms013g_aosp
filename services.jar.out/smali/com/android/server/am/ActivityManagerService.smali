@@ -31594,6 +31594,14 @@
 
     aput v4, v8, v5
 
+    invoke-static {v6}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v4
+
+    invoke-static {v4, v8}, Lcom/android/server/am/ActivityManagerServiceInjector;->computeGids(I[I)[I
+
+    move-result-object v8
+
     .line 3339
     .end local v8    # "gids":[I
     .end local v24    # "mountServiceInternal":Landroid/os/storage/MountServiceInternal;
