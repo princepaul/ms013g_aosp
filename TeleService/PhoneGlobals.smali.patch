@@ -1,0 +1,29 @@
+From f3ae162ce5765f31eac076048686452d5c01aa1d Mon Sep 17 00:00:00 2001
+From: mochangming <mochangming@xiaomi.com>
+Date: Thu, 27 Oct 2016 09:30:07 +0800
+Subject: [PATCH] Patch PhoneGlobals.smali
+
+---
+ smali/com/android/phone/PhoneGlobals.smali |    9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+--- a/smali/com/android/phone/PhoneGlobals.smali
++++ b/smali/com/android/phone/PhoneGlobals.smali
+@@ -757,7 +757,13 @@
+ 
+     if-nez v10, :cond_2
+ 
+-    invoke-static {p0}, Lcom/android/internal/telephony/PhoneFactory;->makeDefaultPhones(Landroid/content/Context;)V
++    invoke-static {p0}, Lcom/android/internal/telephony/TelephonyPluginDelegate;->init(Landroid/content/Context;)V
++
++    invoke-static {}, Lcom/android/internal/telephony/TelephonyPluginDelegate;->getInstance()Lcom/android/internal/telephony/TelephonyPluginDelegate;
++
++    move-result-object v10
++
++    invoke-virtual {v10, p0}, Lcom/android/internal/telephony/TelephonyPluginDelegate;->makeDefaultPhones(Landroid/content/Context;)V
+ 
+     new-instance v5, Landroid/content/Intent;
+ 
+-- 
+1.7.9.5
+

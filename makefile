@@ -15,6 +15,8 @@ local-phone-priv-apps := Shell FusedLocation ProxyHandler ExternalStorageProvide
 	SharedStorageBackup InputDevices CellBroadcastReceiver \
 	BackupRestoreConfirmation
 
+local-miui-modified-apps := TeleService
+
 local-density := XHDPI
 local-target-bit := 32
 
